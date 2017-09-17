@@ -1,0 +1,59 @@
+﻿<Window x:Class="ExampleApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExampleApp"
+        xmlns:wpfAboutView="clr-namespace:WpfAboutView;assembly=WpfAboutView"
+        mc:Ignorable="d"
+        Title="WpfAboutView Example"
+        SizeToContent="WidthAndHeight">
+    <Grid Margin="5">
+        <wpfAboutView:AboutView AppIconSource="pack://application:,,,/ExampleApp.ico"
+                                AppName="WpfAboutView Example"
+                                AppVersion="1.0.0.0">
+            <wpfAboutView:AboutView.Credits>
+                <wpfAboutView:Credit Name="WpfAboutView"
+                                     Author="Daniel Chalmers"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Long Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Longer Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+                <wpfAboutView:Credit Name="Test Credit"
+                                     Author="Test"
+                                     Website="http://example.com"
+                                     License="Example License.txt" />
+            </wpfAboutView:AboutView.Credits>
+        </wpfAboutView:AboutView>
+    </Grid>
+</Window>
