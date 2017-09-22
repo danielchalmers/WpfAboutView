@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -18,17 +19,12 @@ namespace WpfAboutView
                 typeof(Uri),
                 typeof(AboutView));
 
-        public static readonly DependencyProperty AppNameProperty =
-            DependencyProperty.Register(
-                nameof(AppName),
-                typeof(string),
-                typeof(AboutView));
-
-        public static readonly DependencyProperty AppVersionProperty =
-            DependencyProperty.Register(
-                nameof(AppVersion),
-                typeof(string),
-                typeof(AboutView));
+        public static readonly DependencyProperty AssemblyProperty =
+                    DependencyProperty.Register(
+                nameof(Assembly),
+                typeof(Assembly),
+                typeof(AboutView),
+                new PropertyMetadata(Assembly.GetEntryAssembly()));
 
         public static readonly DependencyProperty CreditsProperty =
             DependencyProperty.Register(
@@ -49,16 +45,14 @@ namespace WpfAboutView
             set => SetValue(AppIconSourceProperty, value);
         }
 
-        public string AppName
-        {
-            get => (string)GetValue(AppNameProperty);
-            set => SetValue(AppNameProperty, value);
-        }
+        public string AppName => Assembly.GetTitle();
 
-        public string AppVersion
+        public Version AppVersion => Assembly.GetVersion();
+
+        public Assembly Assembly
         {
-            get => (string)GetValue(AppVersionProperty);
-            set => SetValue(AppVersionProperty, value);
+            get => (Assembly)GetValue(AssemblyProperty);
+            set => SetValue(AssemblyProperty, value);
         }
 
         public List<Credit> Credits

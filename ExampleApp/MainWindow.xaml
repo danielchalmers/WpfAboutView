@@ -9,9 +9,7 @@
         Title="WpfAboutView Example"
         SizeToContent="WidthAndHeight">
     <Grid Margin="5">
-        <wpfAboutView:AboutView AppIconSource="pack://application:,,,/ExampleApp.ico"
-                                AppName="WpfAboutView Example"
-                                AppVersion="1.0.0.0">
+        <wpfAboutView:AboutView AppIconSource="pack://application:,,,/ExampleApp.ico">
             <wpfAboutView:AboutView.Credits>
                 <wpfAboutView:Credit Name="WpfAboutView"
                                      Author="Daniel Chalmers"

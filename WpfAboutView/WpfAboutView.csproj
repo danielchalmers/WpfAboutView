@@ -51,6 +51,7 @@
     <Compile Include="AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AssemblyHelper.cs" />
     <Compile Include="Credit.cs" />
     <Compile Include="ProcessStartCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
