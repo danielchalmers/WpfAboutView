@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace WpfAboutView
 {
@@ -36,7 +35,6 @@ namespace WpfAboutView
         public AboutView()
         {
             InitializeComponent();
-            ProcessStartCommand = new ProcessStartCommand();
         }
 
         public Uri AppIconSource
@@ -60,8 +58,6 @@ namespace WpfAboutView
             get => (List<Credit>)GetValue(CreditsProperty);
             set => SetValue(CreditsProperty, value);
         }
-
-        public ICommand ProcessStartCommand { get; }
 
         private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
