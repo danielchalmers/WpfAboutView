@@ -42,6 +42,7 @@ namespace WpfAboutView
         public AboutView()
         {
             InitializeComponent();
+            Credits = new List<Credit>();
         }
 
         public Uri AppIconSource
