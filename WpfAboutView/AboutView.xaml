@@ -25,7 +25,8 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Column="0"
                    Source="{Binding AppIconSource}"
-                   Stretch="Uniform" />
+                   Stretch="Uniform"
+                   RenderOptions.BitmapScalingMode="Fant" />
             <Grid Grid.Column="2"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center">
