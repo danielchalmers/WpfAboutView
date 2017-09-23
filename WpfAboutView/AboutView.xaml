@@ -4,14 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WpfAboutView"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+             UseLayoutRounding="True">
     <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
           MinWidth="400"
           HorizontalAlignment="Center"
           VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="15" />
+            <RowDefinition Height="16" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"
@@ -19,14 +20,12 @@
               HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="16" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Image Grid.Column="0"
                    Source="{Binding AppIconSource}"
-                   Stretch="Uniform"
-                   Width="64"
-                   Height="64" />
+                   Stretch="Uniform" />
             <Grid Grid.Column="2"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center">
@@ -41,7 +40,7 @@
                 </Viewbox>
                 <TextBlock Grid.Row="1"
                            HorizontalAlignment="Center"
-                           FontSize="14">
+                           FontSize="16">
                     <TextBlock.Text>
                         <MultiBinding StringFormat="{}v{0}">
                             <Binding Path="AppVersion" />
@@ -52,7 +51,8 @@
         </Grid>
         <ItemsControl Grid.Row="2"
                       ItemsSource="{Binding Credits}"
-                      HorizontalAlignment="Center">
+                      HorizontalAlignment="Center"
+                      Margin="-8">
             <ItemsControl.Template>
                 <ControlTemplate>
                     <UniformGrid IsItemsHost="True"
@@ -62,7 +62,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical"
-                                Margin="5">
+                                Margin="8">
                         <TextBlock Text="{Binding Name}"
                                    FontWeight="Bold" />
                         <TextBlock Text="{Binding Author}" />
