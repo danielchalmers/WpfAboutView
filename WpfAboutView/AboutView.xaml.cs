@@ -25,6 +25,13 @@ namespace WpfAboutView
                 typeof(AboutView),
                 new PropertyMetadata(Assembly.GetEntryAssembly()));
 
+        public static readonly DependencyProperty CreditColumnsProperty =
+                    DependencyProperty.Register(
+                nameof(CreditColumns),
+                typeof(int),
+                typeof(AboutView),
+                new PropertyMetadata(3));
+
         public static readonly DependencyProperty CreditsProperty =
             DependencyProperty.Register(
                 nameof(Credits),
@@ -51,6 +58,12 @@ namespace WpfAboutView
         {
             get => (Assembly)GetValue(AssemblyProperty);
             set => SetValue(AssemblyProperty, value);
+        }
+
+        public int CreditColumns
+        {
+            get => (int)GetValue(CreditColumnsProperty);
+            set => SetValue(CreditColumnsProperty, value);
         }
 
         public List<Credit> Credits

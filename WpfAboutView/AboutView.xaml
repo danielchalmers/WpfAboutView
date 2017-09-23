@@ -56,7 +56,7 @@
             <ItemsControl.Template>
                 <ControlTemplate>
                     <UniformGrid IsItemsHost="True"
-                                 Columns="3" />
+                                 Columns="{Binding CreditColumns}" />
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
