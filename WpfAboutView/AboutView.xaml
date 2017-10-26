@@ -69,11 +69,11 @@
                         <TextBlock Text="{Binding Author}" />
                         <TextBlock>
                             <Hyperlink NavigateUri="{Binding Website}"
-                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                       RequestNavigate="Website_RequestNavigate">
                                 <Run Text="Website" />
                             </Hyperlink><Run Text="," />
-                            <Hyperlink NavigateUri="{Binding License}"
-                                       RequestNavigate="Hyperlink_RequestNavigate">
+                            <Hyperlink Tag="{Binding}"
+                                       Click="LicenseHyperlink_Click">
                                 <Run Text="License" />
                             </Hyperlink>
                         </TextBlock>

@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Navigation;
 
 namespace WpfAboutView
 {
@@ -73,14 +75,16 @@ namespace WpfAboutView
             set => SetValue(CreditsProperty, value);
         }
 
-        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        private void LicenseHyperlink_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = e.Uri.ToString(),
-                WorkingDirectory = Assembly.GetDirectory(),
-                UseShellExecute = true
-            });
+            var credit = (Credit)((Hyperlink)sender).Tag;
+
+            MessageBox.Show(credit.LicenseText, $"{credit.Name} License");
+        }
+
+        private void Website_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(e.Uri.ToString());
         }
     }
 }

@@ -7,6 +7,6 @@ namespace WpfAboutView
         public string Name { get; set; }
         public string Author { get; set; }
         public Uri Website { get; set; }
-        public Uri License { get; set; }
+        public string LicenseText { get; set; }
     }
 }
