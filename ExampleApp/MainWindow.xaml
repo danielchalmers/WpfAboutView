@@ -1,9 +1,8 @@
 ﻿<Window x:Class="ExampleApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ExampleApp"
         xmlns:properties="clr-namespace:ExampleApp.Properties"
         xmlns:wpfAboutView="clr-namespace:WpfAboutView;assembly=WpfAboutView"
         mc:Ignorable="d"
@@ -16,38 +15,47 @@
                                      Author="Daniel Chalmers"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Long Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Longer Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+
                 <wpfAboutView:Credit Name="Test Credit"
                                      Author="Test"
                                      Website="http://example.com"
