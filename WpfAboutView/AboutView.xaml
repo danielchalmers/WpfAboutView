@@ -53,7 +53,7 @@
         <ItemsControl Grid.Row="2"
                       ItemsSource="{Binding Credits}"
                       HorizontalAlignment="Center"
-                      Margin="-8">
+                      Margin="-4">
             <ItemsControl.Template>
                 <ControlTemplate>
                     <UniformGrid IsItemsHost="True"
@@ -63,7 +63,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical"
-                                Margin="8">
+                                Margin="4">
                         <TextBlock Text="{Binding Name}"
                                    FontWeight="Bold" />
                         <TextBlock Text="{Binding Author}" />
