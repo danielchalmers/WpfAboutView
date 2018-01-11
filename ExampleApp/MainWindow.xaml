@@ -7,60 +7,87 @@
         xmlns:wpfAboutView="clr-namespace:WpfAboutView;assembly=WpfAboutView"
         mc:Ignorable="d"
         Title="WpfAboutView Example"
-        SizeToContent="WidthAndHeight">
-    <Grid Margin="5">
-        <wpfAboutView:AboutView AppIconSource="pack://application:,,,/ExampleApp.ico">
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <wpfAboutView:AboutView x:Key="ExampleAboutView"
+                                x:Shared="False"
+                                AppIconSource="pack://application:,,,/ExampleApp.ico">
             <wpfAboutView:AboutView.Credits>
                 <wpfAboutView:Credit Name="WpfAboutView"
                                      Author="Daniel Chalmers"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Test Credit"
-                                     Author="Test"
+                <wpfAboutView:Credit Name="Example Credit"
+                                     Author="Example"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Test Credit"
-                                     Author="Test"
+                <wpfAboutView:Credit Name="Example Credit"
+                                     Author="Example"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Long Test Credit"
-                                     Author="Test"
+                <wpfAboutView:Credit Name="Long Example Credit"
+                                     Author="Example"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Test Credit"
-                                     Author="Test"
+                <wpfAboutView:Credit Name="Example Credit"
+                                     Author="Example"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Longer Test Credit"
-                                     Author="Test"
+                <wpfAboutView:Credit Name="Longer Example Credit"
+                                     Author="Example"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Test Credit"
-                                     Author="Test"
+                <wpfAboutView:Credit Name="Example Credit"
+                                     Author="Example"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Test Credit"
-                                     Author="Test"
-                                     Website="http://example.com"
-                                     LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
-
-                <wpfAboutView:Credit Name="Test Credit"
-                                     Author="Test"
-                                     Website="http://example.com"
-                                     LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
-
-                <wpfAboutView:Credit Name="Test Credit"
-                                     Author="Test"
+                <wpfAboutView:Credit Name="Example Credit"
+                                     Author="Example"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
             </wpfAboutView:AboutView.Credits>
         </wpfAboutView:AboutView>
+    </Window.Resources>
+
+    <Grid Margin="8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="8" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="8" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0"
+                  Header="AboutView">
+            <ContentPresenter Content="{StaticResource ExampleAboutView}" />
+        </GroupBox>
+
+        <GroupBox Grid.Column="2"
+                  Header="CreditItem">
+            <wpfAboutView:CreditItem>
+                <wpfAboutView:CreditItem.Credit>
+                    <wpfAboutView:Credit Name="Single Example Credit"
+                                         Author="Example"
+                                         Website="http://example.com"
+                                         LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+                </wpfAboutView:CreditItem.Credit>
+            </wpfAboutView:CreditItem>
+        </GroupBox>
+
+        <GroupBox Grid.Column="4"
+                  Header="AboutDialog">
+            <Button Content="Open AboutDialog"
+                    Click="OpenAboutDialogButton_Click" />
+        </GroupBox>
     </Grid>
 </Window>

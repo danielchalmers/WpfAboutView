@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using WpfAboutView;
 
 namespace ExampleApp
 {
@@ -10,6 +11,15 @@ namespace ExampleApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OpenAboutDialogButton_Click(object sender, RoutedEventArgs e)
+        {
+            new AboutDialog
+            {
+                Owner = this,
+                AboutView = (AboutView)Resources["ExampleAboutView"]
+            }.ShowDialog();
         }
     }
 }
