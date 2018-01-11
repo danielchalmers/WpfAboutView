@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace WpfAboutView
 {
@@ -44,9 +42,6 @@ namespace WpfAboutView
         {
             InitializeComponent();
 
-            LaunchUriCommand = new RelayCommand<Uri>(LaunchUri);
-            ViewCreditLicenseCommand = new RelayCommand<Credit>(ViewCreditLicense);
-
             Credits = new List<Credit>();
         }
 
@@ -76,19 +71,6 @@ namespace WpfAboutView
         {
             get => (List<Credit>)GetValue(CreditsProperty);
             set => SetValue(CreditsProperty, value);
-        }
-
-        public ICommand LaunchUriCommand { get; }
-        public ICommand ViewCreditLicenseCommand { get; }
-
-        private void LaunchUri(Uri uri)
-        {
-            Process.Start(uri.ToString());
-        }
-
-        private void ViewCreditLicense(Credit credit)
-        {
-            MessageBox.Show(credit.LicenseText, $"{credit.Name} License");
         }
     }
 }

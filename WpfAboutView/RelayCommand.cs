@@ -3,44 +3,19 @@ using System.Windows.Input;
 
 namespace WpfAboutView
 {
-    internal class RelayCommand<T> : ICommand
+    internal class RelayCommand : ICommand
     {
-        private readonly Func<T, bool> _canExecuteMethod;
-        private readonly Action<T> _executeMethod;
+        private Action _action;
 
-        public RelayCommand(Action<T> executeMethod)
+        public RelayCommand(Action action)
         {
-            _executeMethod = executeMethod;
+            _action = action;
         }
 
-        public RelayCommand(Action<T> executeMethod, Func<T, bool> canExecuteMethod)
-        {
-            _executeMethod = executeMethod;
-            _canExecuteMethod = canExecuteMethod;
-        }
+        public event EventHandler CanExecuteChanged;
 
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
+        public bool CanExecute(object parameter) => true;
 
-        bool ICommand.CanExecute(object parameter)
-        {
-            if (_canExecuteMethod != null)
-            {
-                return _canExecuteMethod((T)parameter);
-            }
-            if (_executeMethod != null)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        void ICommand.Execute(object parameter)
-        {
-            _executeMethod?.Invoke((T)parameter);
-        }
+        public void Execute(object parameter) => _action();
     }
 }
