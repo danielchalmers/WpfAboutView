@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              UseLayoutRounding="True">
     <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
-          MinWidth="400"
           HorizontalAlignment="Center"
           VerticalAlignment="Center">
         <Grid.RowDefinitions>
