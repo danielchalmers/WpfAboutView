@@ -20,11 +20,13 @@ namespace WpfAboutView
         {
             InitializeComponent();
 
-            ViewLicenseCommand = new RelayCommand(() =>
-                MessageBox.Show(Credit.LicenseText, $"{Credit.Name} License"));
+            ViewLicenseCommand = new RelayCommand(
+                () => MessageBox.Show(Credit.LicenseText, $"{Credit.Name} License"),
+                (parameter) => Credit.LicenseText != null);
 
-            ViewWebsiteCommand = new RelayCommand(() =>
-                Process.Start(Credit.Website.ToString()));
+            ViewWebsiteCommand = new RelayCommand(
+                () => Process.Start(Credit.Website?.ToString()),
+                (parameter) => Credit.Website != null);
         }
 
         public Credit Credit

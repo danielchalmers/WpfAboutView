@@ -5,17 +5,23 @@ namespace WpfAboutView
 {
     internal class RelayCommand : ICommand
     {
-        private Action _action;
+        private readonly Predicate<object> _canExecute;
+        private readonly Action _execute;
 
-        public RelayCommand(Action action)
+        public RelayCommand(Action execute, Predicate<object> canExecute)
         {
-            _action = action;
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+            _canExecute = canExecute;
         }
 
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
 
-        public bool CanExecute(object parameter) => true;
+        public bool CanExecute(object parameter) => _canExecute == null ? true : _canExecute(parameter);
 
-        public void Execute(object parameter) => _action();
+        public void Execute(object parameter) => _execute();
     }
 }

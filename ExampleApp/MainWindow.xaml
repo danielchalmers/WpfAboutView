@@ -32,18 +32,14 @@
 
                 <wpfAboutView:Credit Name="Long Example Credit"
                                      Author="Example"
-                                     Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
                 <wpfAboutView:Credit Name="Example Credit"
                                      Author="Example"
-                                     Website="http://example.com"
-                                     LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+                                     Website="http://example.com" />
 
                 <wpfAboutView:Credit Name="Longer Example Credit"
-                                     Author="Example"
-                                     Website="http://example.com"
-                                     LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+                                     Author="Example" />
 
                 <wpfAboutView:Credit Name="Example Credit"
                                      Author="Example"
