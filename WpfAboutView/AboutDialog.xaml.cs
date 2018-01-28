@@ -20,6 +20,13 @@ namespace WpfAboutView
             AboutView = new AboutView();
         }
 
+        public AboutDialog(AboutView aboutView)
+        {
+            InitializeComponent();
+
+            AboutView = aboutView;
+        }
+
         public AboutView AboutView
         {
             get => (AboutView)GetValue(AboutViewProperty);
