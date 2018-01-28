@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,15 +34,15 @@ namespace WpfAboutView
         public static readonly DependencyProperty CreditsProperty =
             DependencyProperty.Register(
                 nameof(Credits),
-                typeof(List<Credit>),
+                typeof(ObservableCollection<Credit>),
                 typeof(AboutView),
-                new FrameworkPropertyMetadata(new List<Credit>(), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                new FrameworkPropertyMetadata(new ObservableCollection<Credit>(), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         public AboutView()
         {
             InitializeComponent();
 
-            Credits = new List<Credit>();
+            Credits = new ObservableCollection<Credit>();
         }
 
         public Uri AppIconSource
@@ -67,9 +67,9 @@ namespace WpfAboutView
             set => SetValue(CreditColumnsProperty, value);
         }
 
-        public List<Credit> Credits
+        public ObservableCollection<Credit> Credits
         {
-            get => (List<Credit>)GetValue(CreditsProperty);
+            get => (ObservableCollection<Credit>)GetValue(CreditsProperty);
             set => SetValue(CreditsProperty, value);
         }
     }
