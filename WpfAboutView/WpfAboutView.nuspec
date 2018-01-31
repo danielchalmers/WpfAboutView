@@ -11,6 +11,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>$copyright$</copyright>
-    <tags>WPF About View</tags>
+    <tags>WPF About AboutBox AboutWindow AboutDialog</tags>
   </metadata>
 </package>
