@@ -9,7 +9,8 @@
         Title="WpfAboutView Example"
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
+        ResizeMode="CanMinimize"
+        UseLayoutRounding="True">
     <Window.Resources>
         <wpfAboutView:AboutView x:Key="ExampleAboutView"
                                 x:Shared="False"
@@ -17,73 +18,55 @@
             <wpfAboutView:AboutView.Credits>
                 <wpfAboutView:Credit Name="WpfAboutView"
                                      Author="Daniel Chalmers"
-                                     Website="http://example.com"
+                                     Website="https://github.com/danielchalmers/WpfAboutView"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
                 <wpfAboutView:Credit Name="Example Credit"
-                                     Author="Example"
+                                     Author="Example Author"
                                      Website="http://example.com"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Example Credit"
-                                     Author="Example"
-                                     Website="http://example.com"
+                <wpfAboutView:Credit Name="Credit without website"
+                                     Author="Another Author"
                                      LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
 
-                <wpfAboutView:Credit Name="Long Example Credit"
-                                     Author="Example"
-                                     LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+                <wpfAboutView:Credit Name="Credit without license"
+                                     Author="Test Author"
+                                     Website="http://test.com" />
 
-                <wpfAboutView:Credit Name="Example Credit"
-                                     Author="Example"
-                                     Website="http://example.com" />
-
-                <wpfAboutView:Credit Name="Longer Example Credit"
-                                     Author="Example" />
-
-                <wpfAboutView:Credit Name="Example Credit"
-                                     Author="Example"
-                                     Website="http://example.com"
-                                     LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
-
-                <wpfAboutView:Credit Name="Example Credit"
-                                     Author="Example"
-                                     Website="http://example.com"
-                                     LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+                <wpfAboutView:Credit Name="No website or license"
+                                     Author="Test Author" />
             </wpfAboutView:AboutView.Credits>
         </wpfAboutView:AboutView>
+
+        <Style TargetType="GroupBox">
+            <Setter Property="Padding"
+                    Value="4" />
+        </Style>
     </Window.Resources>
 
-    <Grid Margin="8">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="8" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="8" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-
-        <GroupBox Grid.Column="0"
-                  Header="AboutView">
+    <StackPanel Margin="12"
+                Orientation="Vertical">
+        <GroupBox Header="AboutView">
             <ContentPresenter Content="{StaticResource ExampleAboutView}" />
         </GroupBox>
 
-        <GroupBox Grid.Column="2"
-                  Header="CreditItem">
-            <wpfAboutView:CreditItem>
-                <wpfAboutView:CreditItem.Credit>
-                    <wpfAboutView:Credit Name="Single Example Credit"
-                                         Author="Example"
-                                         Website="http://example.com"
-                                         LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
-                </wpfAboutView:CreditItem.Credit>
-            </wpfAboutView:CreditItem>
-        </GroupBox>
+        <UniformGrid Rows="1">
+            <GroupBox Header="CreditItem">
+                <wpfAboutView:CreditItem HorizontalAlignment="Center">
+                    <wpfAboutView:CreditItem.Credit>
+                        <wpfAboutView:Credit Name="Single Example Credit"
+                                             Author="Example"
+                                             Website="http://example.com"
+                                             LicenseText="{x:Static properties:Resources.WpfAboutView_License}" />
+                    </wpfAboutView:CreditItem.Credit>
+                </wpfAboutView:CreditItem>
+            </GroupBox>
 
-        <GroupBox Grid.Column="4"
-                  Header="AboutDialog">
-            <Button Content="Open AboutDialog"
-                    Click="OpenAboutDialogButton_Click" />
-        </GroupBox>
-    </Grid>
+            <GroupBox Header="AboutDialog">
+                <Button Content="ShowDialog"
+                        Click="OpenAboutDialogButton_Click" />
+            </GroupBox>
+        </UniformGrid>
+    </StackPanel>
 </Window>
