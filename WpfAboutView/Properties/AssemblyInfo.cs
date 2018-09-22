@@ -7,4 +7,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("WpfAboutView")]
 [assembly: AssemblyCopyright("© Daniel Chalmers 2018")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("1.2.0")]
+[assembly: AssemblyVersion("1.2.1")]
