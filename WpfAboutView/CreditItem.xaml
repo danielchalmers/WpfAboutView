@@ -12,7 +12,8 @@
         <TextBlock Text="{Binding Credit.Author}" />
 
         <TextBlock>
-            <Hyperlink Command="{Binding ViewWebsiteCommand}">
+            <Hyperlink Command="{Binding ViewWebsiteCommand}"
+                       ToolTip="{Binding Credit.Website}">
                 <Run Text="Website" />
             </Hyperlink><Run Text="," />
             <Hyperlink Command="{Binding ViewLicenseCommand}">
