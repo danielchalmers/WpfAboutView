@@ -20,16 +20,34 @@
               HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="16" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Image Grid.Column="0"
                    Source="{Binding AppIconSource}"
                    Stretch="Uniform"
-                   RenderOptions.BitmapScalingMode="Fant" />
+                   RenderOptions.BitmapScalingMode="Fant"
+                   Margin="0,0,16,0">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Style.Setters>
+                            <Setter Property="Visibility"
+                                    Value="Visible" />
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding AppIconSource}"
+                                         Value="{x:Null}">
+                                <DataTrigger.Setters>
+                                    <Setter Property="Visibility"
+                                            Value="Visible" />
+                                </DataTrigger.Setters>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
 
-            <Grid Grid.Column="2"
+            <Grid Grid.Column="1"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center">
                 <Grid.RowDefinitions>
