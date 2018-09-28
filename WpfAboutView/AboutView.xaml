@@ -39,7 +39,7 @@
                                          Value="{x:Null}">
                                 <DataTrigger.Setters>
                                     <Setter Property="Visibility"
-                                            Value="Visible" />
+                                            Value="Collapsed" />
                                 </DataTrigger.Setters>
                             </DataTrigger>
                         </Style.Triggers>
