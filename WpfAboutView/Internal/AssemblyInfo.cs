@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace WpfAboutView
 {
-    internal static class AssemblyHelper
+    internal static class AssemblyInfo
     {
         /// <summary>
         /// Returns the assembly's Company attribute, or <c>null</c> if one isn't supplied.
@@ -23,18 +23,6 @@ namespace WpfAboutView
         /// </summary>
         internal static string GetDescription(this Assembly assembly) =>
            assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
-
-        /// <summary>
-        /// Returns info about the assembly's directory.
-        /// </summary>
-        internal static DirectoryInfo GetDirectoryInfo(this Assembly assembly) =>
-           assembly.GetFileInfo().Directory;
-
-        /// <summary>
-        /// Returns info about the assembly's file.
-        /// </summary>
-        internal static FileInfo GetFileInfo(this Assembly assembly) =>
-           new FileInfo(assembly.Location);
 
         /// <summary>
         /// Returns the assembly's Title attribute, or <c>null</c> if one isn't supplied.

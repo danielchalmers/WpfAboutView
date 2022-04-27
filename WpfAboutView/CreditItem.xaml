@@ -1,24 +1,18 @@
 ﻿<UserControl x:Class="WpfAboutView.CreditItem"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d">
-    <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
-                Orientation="Vertical">
-        <TextBlock Text="{Binding Credit.Name}"
-                   FontWeight="Bold" />
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+		<TextBlock Text="{Binding Credit.Name}" FontWeight="Bold" />
 
-        <TextBlock Text="{Binding Credit.Author}" />
+		<TextBlock Text="{Binding Credit.Author}" />
 
-        <TextBlock>
-            <Hyperlink Command="{Binding ViewWebsiteCommand}"
-                       ToolTip="{Binding Credit.Website}">
-                <Run Text="Website" />
-            </Hyperlink><Run Text="," />
-            <Hyperlink Command="{Binding ViewLicenseCommand}">
-                <Run Text="License" />
-            </Hyperlink>
-        </TextBlock>
-    </StackPanel>
+		<TextBlock>
+			<Hyperlink Command="{Binding ViewWebsiteCommand}" ToolTip="{Binding Credit.Website}">
+				<Run Text="Website" />
+			</Hyperlink><Run Text="," />
+			<Hyperlink Command="{Binding ViewLicenseCommand}">
+				<Run Text="License" />
+			</Hyperlink>
+		</TextBlock>
+	</StackPanel>
 </UserControl>

@@ -11,7 +11,7 @@ namespace WpfAboutView
         public string LicenseText { get; set; }
 
         public override bool Equals(object obj) =>
-            obj is Credit && Equals((Credit)obj);
+            obj is Credit credit && Equals(credit);
 
         public bool Equals(Credit other) =>
             Name == other.Name &&
