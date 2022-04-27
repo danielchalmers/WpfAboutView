@@ -4,8 +4,6 @@ WPF About controls with app info and credits.
 
 [![NuGet](https://img.shields.io/nuget/v/WpfAboutView.svg)](https://www.nuget.org/packages/WpfAboutView)
 
-## Usage
-
 ```xaml
 <wpfAboutView:AboutView AppIconSource="pack://application:,,,/ExampleApp.ico">
     <wpfAboutView:AboutView.Credits>
@@ -34,8 +32,6 @@ WPF About controls with app info and credits.
 </wpfAboutView:AboutView>
 ```
 
-See the ExampleApp folder for a full example.
+![image](https://user-images.githubusercontent.com/7112040/165429932-00d7512c-655c-4071-bce7-9eb81d1a8fb7.png)
 
-## License
-
-MIT
+See the ExampleApp folder for full demo.
