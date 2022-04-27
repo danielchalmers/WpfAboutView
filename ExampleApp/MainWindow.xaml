@@ -39,12 +39,13 @@
 		</wpfAboutView:AboutView>
 
 		<Style TargetType="GroupBox">
-			<Setter Property="Padding" Value="4" />
+			<Setter Property="Margin" Value="16" />
+			<Setter Property="Padding" Value="16" />
 		</Style>
 
 	</Window.Resources>
 
-	<StackPanel Margin="12">
+	<StackPanel>
 
 		<GroupBox Header="AboutView">
 			<ContentPresenter Content="{StaticResource ExampleAboutView}" />
