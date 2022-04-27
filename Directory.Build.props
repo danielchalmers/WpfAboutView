@@ -1,0 +1,20 @@
+<Project>
+  
+  <PropertyGroup>
+    <TargetFrameworks>net462</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Description>About controls for WPF</Description>
+    <Authors>Daniel Chalmers</Authors>
+    <Copyright>© Daniel Chalmers</Copyright>
+    <Version>1.2.1</Version>
+    <PackageTags>WPF About AboutBox AboutDialog AboutView AboutWindow</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/danielchalmers/WpfAboutView</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
