@@ -25,7 +25,7 @@ namespace WpfAboutView
                 (parameter) => Credit.LicenseText != null);
 
             ViewWebsiteCommand = new RelayCommand(
-                () => Process.Start(Credit.Website?.ToString()),
+                () => Process.Start(new ProcessStartInfo { FileName = Credit.Website?.ToString(), UseShellExecute = true }),
                 (parameter) => Credit.Website != null);
         }
 
