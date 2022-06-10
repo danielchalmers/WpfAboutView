@@ -21,8 +21,8 @@
 		        Click="CloseButton_Click"
 		        IsDefault="True"
 		        IsCancel="True"
-		        Width="75"
-		        Height="23"
+		        MinWidth="75"
+		        MinHeight="23"
 		        HorizontalAlignment="Right" />
 		
 	</Grid>
